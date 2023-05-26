@@ -11,7 +11,7 @@ class BookmarksController < ApplicationController
     @bookmark.list = @list
     @bookmark.movie = @movie
     @bookmark.save
-    raise
+    redirect_to list_path(@list)
   end
 
   def destroy

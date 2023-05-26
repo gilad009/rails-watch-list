@@ -6,7 +6,18 @@
 
 <div class="container">
   <%= simple_form_for [@list, @bookmark] do |f| %>
-  <%= f.association :movie, collection: @movies  %>
+  <%= f.input :comment %>
+  <%= f.association :movie %>
   <%= f.submit "Add Movie to list" %>
   <% end %>
+
+
+<div class="cards">
+  <% @list.movies.each do |movie|  %>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+  <%= movie.title %>
+    </div>
+    <% end %>
+</div>
+
 </div>
